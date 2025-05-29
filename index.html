@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Virtual Pitch - Home</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #2ecc71;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: var(--primary-color);
+            padding: 1rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--light-color);
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        .post-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .post-content {
+            padding: 1.5rem;
+        }
+        .post-title {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        .post-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        .read-more:hover {
+            background: var(--secondary-color);
+        }
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to TheVirtualPitch</h1>
+        <p>Thoughts, stories and ideas</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="blog-posts">
+            <article class="post-card">
+                <img src="imgaes/download (1).jpeg" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <h2 class="post-title"><a href="post.html">Are you excited about the fifa club world cup?</a></h2>
+                    <p class="post-excerpt">Lets see the chances of an African team reaching the finals.</p>
+                    <div class="post-meta">
+                        <span>May 29, 2025</span>
+                        <span>5 min read</span>
+                    </div>
+                    <a href="post.html" class="read-more">Read More</a>  
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <img src="imgaes/GTA6 cover.jpeg" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <h2 class="post-title"><a href="#">GTA 6</a></h2>
+                    <p class="post-excerpt">GTA 6 pre-orders are already getting fans seriously excited.</p>
+                    <div class="post-meta">
+                        <span>May 29, 2025</span>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <img src="imgaes/Black.jpeg" alt="Post image" class="post-image">
+                <div class="post-content">
+                    <h2 class="post-title"><a href="#">Black why was it so good?</a></h2>
+                    <p class="post-excerpt">This game is definitely in contention for best shooter on the ps2.</p>
+                    <div class="post-meta">
+                        <span>May 29, 2025</span>
+                        <span>10 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 The Virtual Pitch. All rights reserved.</p>
+    </footer>
+</body>
+</html>

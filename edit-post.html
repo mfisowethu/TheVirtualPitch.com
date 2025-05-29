@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post - My Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-post-editor">
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">My Blog</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">View Site</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="new-post.html">New Post</a></li>
+                    <li><a href="#" id="logout-link">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 id="editor-title">New Post</h2>
+        
+        <form id="post-form" class="post-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="excerpt">Excerpt</label>
+                <textarea id="excerpt" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" rows="10" required></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated)</label>
+                    <input type="text" id="tags">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="image">Featured Image URL</label>
+                <input type="text" id="image">
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="featured">
+                <label for="featured">Featured Post</label>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Post</button>
+                <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        // Update title if editing
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            
+            if (postId) {
+                document.getElementById('editor-title').textContent = 'Edit Post';
+            }
+        });
+    </script>
+</body>
+</html>

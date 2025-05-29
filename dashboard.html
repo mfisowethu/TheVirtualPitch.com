@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-dashboard">
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">My Blog</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">View Site</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="new-post.html">New Post</a></li>
+                    <li><a href="#" id="logout-link">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Dashboard</h2>
+        
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>Total Posts</h3>
+                <p id="total-posts">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Featured Posts</h3>
+                <p id="featured-posts">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Categories</h3>
+                <p id="total-categories">0</p>
+            </div>
+        </div>
+        
+        <section class="admin-posts">
+            <h3>Recent Posts</h3>
+            <div class="table-responsive">
+                <table id="posts-table" class="posts-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Posts will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <a href="new-post.html" class="btn">Create New Post</a>
+        </section>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        // Update stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const posts = db.getPosts();
+            document.getElementById('total-posts').textContent = posts.length;
+            document.getElementById('featured-posts').textContent = posts.filter(p => p.featured).length;
+            
+            // Count unique categories
+            const categories = [...new Set(posts.map(p => p.category))];
+            document.getElementById('total-categories').textContent = categories.length;
+        });
+    </script>
+</body>
+</html>
